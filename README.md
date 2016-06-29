@@ -22,6 +22,7 @@ Or install it yourself as:
 configuration:
 ```xml
 <match th>
+  type threshold
   condition ge
   threshold 15
   target_key count
