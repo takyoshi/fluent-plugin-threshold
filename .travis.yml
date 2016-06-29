@@ -1,0 +1,11 @@
+language: ruby
+matrix:
+  include:
+    - rvm: 1.9.3
+      gemfile: 1.9.3.gemfile
+    - rvm: 2.0.0
+      gemfile: 2.0.0.gemfile
+    - rvm: 2.1.1
+      gemfile: 2.1.1.gemfile
+    - rvm: 2.3.1
+      gemfile: 2.3.1.gemfile
