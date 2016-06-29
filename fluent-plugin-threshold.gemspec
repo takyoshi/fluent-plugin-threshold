@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["moulin"]
   spec.email         = ["yoshimura-takuya@kayac.com"]
 
-  spec.summary       = %q{fluent plugin to filter each log record by the threshold.}
-  spec.description   = %q{fluent plugin to filter each log record by the threshold.}
+  spec.summary       = %q{fluent-plugin-threshold is the simple filter using a threshold.}
+  spec.description   = %q{fluent-plugin-threshold filters input by a numeric threshold, and filtered record passes into output as it is.}
   spec.homepage      = "https://github.com/takyoshi/fluent-plugin-threshold"
   spec.license       = "MIT"
 
@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "fluentd", ">= 0.10.0"
-  spec.add_runtime_dependency "test-unit", ">= 3.0.0"
+  spec.add_runtime_dependency "fluentd", "~> 0.10.0"
+  spec.add_runtime_dependency "test-unit", "~> 3.0"
 
-  spec.add_development_dependency "bundler", ">= 1.7"
-  spec.add_development_dependency "rake", ">= 0.9"
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 0.9"
 end
