@@ -13,14 +13,14 @@ class SuppressOutputTest < Test::Unit::TestCase
   ]
 
   CONFIG_STRING = %[
-    condition      string
+    operator       string
     threshold      error
     target_key     msg
     add_tag_prefix th.
   ]
 
   CONFIG_REGEXP = %[
-    condition      regexp
+    operator       regexp
     threshold      ^http.*
     target_key     msg
     add_tag_prefix th.
