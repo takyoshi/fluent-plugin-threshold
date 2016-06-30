@@ -5,7 +5,7 @@ module Fluent
 
     Fluent::Plugin.register_output('threshold', self)
 
-    config_param :condition,  :string
+    config_param :operator,   :string
     config_param :threshold,  :string
     config_param :target_key, :string
 
@@ -32,8 +32,8 @@ module Fluent
       end
 
       # You can also refer raw parameter via conf[name].
-      unless @condition
-        raise ConfigError, "fluent-plugin-threshold: 'filter' parameter is required"
+      unless @operator
+        raise ConfigError, "fluent-plugin-threshold: 'operator' parameter is required"
       end
 
       unless @threshold
@@ -59,7 +59,7 @@ module Fluent
       super
 
       filter_record = {}
-      case @condition
+      case @operator
       when "eq"
         if record.member?(@target_key) && record[@target_key].to_f == threshold.to_f
           filter_record = record
@@ -93,7 +93,7 @@ module Fluent
           filter_record = record
         end
       else
-        raise ArgumentError.new("no such condition: #{@condition}")
+        raise ArgumentError.new("no such operator: #{@operator}")
       end
 
       filter_record
