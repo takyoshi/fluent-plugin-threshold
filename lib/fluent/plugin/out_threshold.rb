@@ -14,8 +14,8 @@ module Fluent
     end
 
     # <match *>
-    #   operator eq | ne | gl | ge | lt | le
-    #   threshold <float> | <integer>
+    #   condition eq | ne | gl | ge | lt | le | string | regexp
+    #   threshold <float> | <integer> | <string> | <regexp>
     #   target_key <key_name>
     # </match>
     def initialize
@@ -82,6 +82,14 @@ module Fluent
         end
       when "lt"
         if record.member?(@target_key) && record[@target_key].to_f <  threshold.to_f
+          filter_record = record
+        end
+      when "string"
+        if record.member?(@target_key) && record[@target_key].eql?(threshold)
+          filter_record = record
+        end
+      when "regexp"
+        if record.member?(@target_key) && /#{threshold}/ =~ record[@target_key]
           filter_record = record
         end
       else
