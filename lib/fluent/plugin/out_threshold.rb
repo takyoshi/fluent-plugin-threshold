@@ -89,7 +89,7 @@ module Fluent
           filter_record = record
         end
       when "regexp"
-        if record.member?(@target_key) && record[@target_key] =~ /#{threshold}/
+        if record.member?(@target_key) && /#{threshold}/ =~ record[@target_key]
           filter_record = record
         end
       else
