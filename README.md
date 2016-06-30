@@ -19,17 +19,25 @@ Or install it yourself as:
 
 ## Usage
 
-configuration:
+config_params (all required):
+
+name                             | values
+-------------------------------- | ------------------------------------------
+operator                         | ge, gt, le, lt, string, regexp.
+threshold                        | string, integer, and float value.
+target_key                       | json property name.
+{add|remove}_tag_{prefix|suffix} | string
+
+configuration example:
 ```xml
 <match th>
   type threshold
-  condition ge
+  operator ge
   threshold 15
   target_key count
   add_tag_prefix th.
 </match>
 ```
-
 
 input JSON:
 ```json
