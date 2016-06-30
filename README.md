@@ -21,12 +21,12 @@ Or install it yourself as:
 
 config_params (all required):
 
-name                             | values
--------------------------------- | ------------------------------------------
-operator                         | ge, gt, le, lt, string, regexp.
-threshold                        | string, integer, and float value.
-target_key                       | json property name.
-{add|remove}_tag_{prefix|suffix} | string
+name                                 | values
+------------------------------------ | ------------------------------------------
+operator                             | ge, gt, le, lt, string, regexp.
+threshold                            | string, integer, and float value.
+target_key                           | json property name.
+{add\|remove}\_tag\_{prefix\|suffix} | string
 
 configuration example:
 ```xml
