@@ -6,7 +6,7 @@ class SuppressOutputTest < Test::Unit::TestCase
   end
 
   CONFIG = %[
-    condition      ge
+    operator       ge
     threshold      5
     target_key     count
     add_tag_prefix th.
